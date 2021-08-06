@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+  <nav x-data="{open: false}" class="fixed z-10 w-full bg-secondary text-gray-100">
+    <div class="bg-secondary text-white flex justify-between items-center px-2">
+      <div><img class="mt-2 h-8 py-1 " src="images/logo-w.svg" alt="logo"></div>
+      <button class="cursor-pointer text-2xl" @click="open=true">&equiv;</button>
+    </div>
+    <div x-show="open" @click.away="open = false">
+      <div class=" mt-2 mx-2">
+        <input class="form-input" type="search" placeholder="Búsqueda">
+      </div>
+      <div class="leading-snug  py-1 mx-2 md:flex justify-around">
+        <div class="flex">Precio:
+          <div class="ml-2">$</div>
+          <div class="ml-2 text-primary">$$</div>
+          <div class="ml-2">$$$</div>
+          <div class="ml-2">$$$$</div>
+        </div>
+        <div class="flex">Calificación:
+          <div class="ml-2 text-primary"> &starf;</div>
+          <div class="ml-px text-primary">&starf;</div>
+          <div class="ml-px text-primary">&starf;</div>
+          <div class="ml-px text-primary">&starf;</div>
+          <div class="ml-px">&starf;</div>
+        </div>
+        <div>
+          <button class="btn py-1 mb-1 hover:bg-gray-500">Filtrar</button>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+
+
+  <main class=" bg-gray-300 pb-8">
+    <div class="h-56 md:h-96 bg-cover bg-center"
+      style="background-image: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');">
+
+    </div>
+    <div class="container mx-auto md:flex">
+      <div class="mt-4 md:mx-2 md:w-1/2 md:flex md:bg-white rounded-lg">
+        <div>
+          <img class="rounded-lg  md:rounded-r-none w-full"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=500&q=80"
+            alt="cheese hamburguer">
+        </div>
+        <div class="relative  bg-white -mt-2 rounded-lg  md:bg-transparent mx-2 pl-2  md:mx-0">
+          <h2 class=" pt-1 font-semibold text-xl md:text-lg uppercase tracking-tight text-gray-900">CHEESE BURGER</h2>
+          <p class="text-gray-700 leading-snug">Cheese hamburguer with meat, tomatoes, onions, pikles and lot of
+            delicius
+            cheese</p>
+          <div class=" mt-2 font-medium text-sm text-gray-800">$4.55 USD</div>
+          <div class="mt-2 text-sm text-blue-400">&starf;&starf;&starf;&star; | 58 reviews </div>
+        </div>
+      </div>
+      <div class="mt-4 md:mx-2 md:w-1/2 md:flex md:bg-white rounded-lg">
+        <div>
+          <img class="rounded-lg  md:rounded-r-none w-full"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=500&q=80"
+            alt="cheese hamburguer">
+        </div>
+        <div class="relative  bg-white -mt-2 rounded-lg  md:bg-transparent mx-2 pl-2  md:mx-0">
+          <h2 class=" pt-1 font-semibold text-xl md:text-lg uppercase tracking-tight text-gray-900">CHEESE BURGER</h2>
+          <p class="text-gray-700 leading-snug">Cheese hamburguer with meat, tomatoes, onions, pikles and lot of
+            delicius
+            cheese</p>
+          <div class=" mt-2 font-medium text-sm text-gray-800">$4.55 USD</div>
+          <div class="mt-2 text-sm text-blue-400">&starf;&starf;&starf;&star; | 58 reviews </div>
+        </div>
+      </div>
+    </div>
+    <form class="container mx-auto my-4" action="" method="post">
+      <label class="mb-2 font-semibold block" for="POST-name">Nombre</label>
+      <input class="form-input" id="POST-name" type="text" name="nombre" placeholder="nombre">
+      <label class="mb-2 font-semibold block" for="POST-email">e-mail</label>
+      <input class="form-input" id="POST-email" type="email" name="email" placeholder="e-mail">
+      <label class="mb-2 font-semibold block" for="POST-comments">Comentarios</label>
+      <textarea class="form-input" name="comments" id="POST-comments" cols="90%" rows="5"></textarea>
+      <input class="btn mx-auto" type="button" value="enviar">
+    </form>
+  </main>
+  <footer class=" w-full bg-secondary text-white pt-2 pb-2 ">
+    <div class="md:flex md:flex-row-reverse md:justify-around">
+      <div class="ml-8">
+        <div class="hover:text-blue-600 "><i class="fa fa-facebook"></i> platzifood</div>
+        <div class="hover:text-blue-300"><i class="fa fa-twitter"></i> @platzifood</div>
+        <div class="hover:text-red-400"><i class="fa fa-instagram"></i> @platzifood
+        </div>
+      </div>
+      <ul class="mt-4 ml-8 mb-4 md:list-disc">
+        <li>Soporte</li>
+        <li>Acerca de nosotros</li>
+        <li>Registro</li>
+        <li>Aviso de Privacidad</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
